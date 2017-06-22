@@ -4,10 +4,10 @@ import re
 
 app = Flask(__name__)
 
-app.config['DEBUG'] = True      # displays runtime errors in the browser, too
+app.config['DEBUG'] = True      
 
 def is_invalid(text):
-    # text == '' or (' ' in text) or len(text) < 3 or len(text) > 20
+
     return re.search(r"\s+", text) or re.search(r"^.{0,2}$", text) or re.search(r"^.{20,}$", text)
 
 
