@@ -36,7 +36,7 @@ def signup():
 
 
     if not (username_error or password_error or vrf_password_error or email_error):
-        return redirect('/welcome-page?username=' + username)
+        return redirect('/welcome-page?username= ' + username)
     else:
         return render_template('form.html',
             username = username,
