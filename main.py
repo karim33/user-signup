@@ -15,7 +15,7 @@ def is_invalid(text):
 def signup():
     username = request.form['username']
     password = request.form['password']
-    vrf_password = request.form['c_password']
+    vrf_password = request.form['vrf_password']
     email = request.form['email']
 
     username_error = ''
@@ -36,7 +36,7 @@ def signup():
 
 
     if not (username_error or password_error or vrf_password_error or email_error):
-        return redirect('/welcome?username=' + username)
+        return redirect('/welcome-page?username=' + username)
     else:
         return render_template('form.html',
             username = username,
@@ -47,10 +47,10 @@ def signup():
             email_error = email_error)
 
 
-@app.route("/welcome")
+@app.route("/welcome-page")
 def welcome():
     username = request.args.get('username')
-    return render_template('welcome.html', username=username)
+    return render_template('welcome-page.html', username=username)
 
 
 @app.route("/")
