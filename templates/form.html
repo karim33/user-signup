@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sign-up</h1>
+
+<form action="/" method="POST">
+    <table>
+        <tr>
+            <td>
+                <label for="username">Username</label>
+            </td>
+            <td>
+                <input type="text" id="username" name="username" value = "{{ username }}"/>
+            </td>
+            <td>
+                 <span class="error">{{ username_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="password" autocomplete="off"> Password</label>
+            </td>
+            <td>
+                <input type="password" id="password" name="password"/>
+            </td>
+            <td>
+                <span class="error">{{ password_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="c_password" autocomplete="off"> Verify Password</label>
+            </td>
+            <td>
+                <input type="password" id="vrf_password" name="vrf_password"/>
+            </td>
+            <td>
+                <span class="error">{{ vrf_password_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email">Email (optional)</label>
+            </td>
+            <td>
+                <input type="text" id="email" name="email" value="{{ email }}"/>
+            </td>
+            <td>
+                <span class="error">{{ email_error }}</span>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit"/>
+
+</form>
+
+
+{% endblock %}
